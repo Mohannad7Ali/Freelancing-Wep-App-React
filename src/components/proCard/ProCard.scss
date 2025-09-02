@@ -1,0 +1,263 @@
+// تطبيق متغيرات الألوان من اللوحة المقدمة
+$primary-color: #1E90FF;
+$secondary-color-1: #00CEC9;
+$secondary-color-2: #FFB400;
+$main-bg: #F9FAFB;
+$card-bg: #FFFFFF;
+$dark-bg: #1E293B;
+$body-text: #2C3E50;
+$muted-text: #64748B;
+$text-on-primary: #FFFFFF;
+$warning-color: #E63946;
+
+.proCard {
+  display: flex;
+  flex-direction: column;
+  background: $card-bg;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .cardHeader {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    
+    .userInfo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid $primary-color;
+      }
+      
+      .userDetails {
+        display: flex;
+        flex-direction: column;
+        
+        .username {
+          font-weight: 600;
+          color: $body-text;
+          font-size: 1.1rem;
+        }
+        
+        .userTitle {
+          color: $muted-text;
+          font-size: 0.85rem;
+        }
+      }
+    }
+    
+    .loadingUser, .errorUser {
+      padding: 0.5rem;
+      text-align: center;
+      color: $muted-text;
+      font-size: 0.9rem;
+    }
+  }
+
+  .cardBody {
+    padding: 1.5rem;
+    flex-grow: 1;
+    
+    .description {
+      color: $body-text;
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.95rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 6.4em; // 4 lines * 1.6 line-height
+    }
+  }
+
+  .cardFooter {
+    padding: 1.25rem 1.5rem;
+    background: $main-bg;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    
+    .projectDetails {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      
+      .detailItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0.5rem;
+        
+        &.status, &.price {
+          .detailValue {
+            font-weight: 700;
+          }
+        }
+        
+        .detailLabel {
+          font-size: 0.8rem;
+          color: $muted-text;
+          margin-bottom: 0.4rem;
+          font-weight: 500;
+        }
+        
+        .detailValue {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          color: $body-text;
+          font-weight: 600;
+          font-size: 0.95rem;
+          
+          i {
+            font-size: 0.85rem;
+          }
+          
+          &.statusValue {
+            i {
+              font-size: 0.75rem;
+            }
+          }
+          
+          &.priceValue {
+            color: $secondary-color-2; // لون ذهبي للسعر
+          }
+        }
+      }
+    }
+  }
+}
+
+// تنسيقات للعربية واتجاه RTL
+[dir="rtl"] {
+  .proCard {
+    text-align: right;
+    
+    .userInfo {
+      flex-direction: row-reverse;
+    }
+    
+    .projectDetails {
+      .detailItem {
+        .detailValue {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+}
+
+// تنسيقات للهواتف
+@media (max-width: 768px) {
+  .proCard {
+    .cardHeader {
+      padding: 1.25rem;
+    }
+    
+    .cardBody {
+      padding: 1.25rem;
+    }
+    
+    .cardFooter {
+      padding: 1rem 1.25rem;
+      
+      .projectDetails {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        
+        .detailItem {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          text-align: right;
+          padding: 0.75rem;
+          background: rgba(255, 255, 255, 0.5);
+          border-radius: 10px;
+          
+          .detailLabel {
+            margin-bottom: 0;
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+  
+  [dir="rtl"] {
+    .proCard {
+      .cardFooter {
+        .projectDetails {
+          .detailItem {
+            text-align: left;
+            flex-direction: row-reverse;
+          }
+        }
+      }
+    }
+  }
+}
+
+// تنسيقات للهواتف صغيرة الحجم
+@media (max-width: 480px) {
+  .proCard {
+    border-radius: 12px;
+    
+    .cardHeader {
+      padding: 1rem;
+      
+      .userInfo {
+        img {
+          width: 45px;
+          height: 45px;
+        }
+        
+        .userDetails {
+          .username {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    
+    .cardBody {
+      padding: 1rem;
+      
+      .description {
+        font-size: 0.9rem;
+        -webkit-line-clamp: 3;
+        max-height: 4.8em; // 3 lines * 1.6 line-height
+      }
+    }
+    
+    .cardFooter {
+      padding: 0.75rem 1rem;
+    }
+  }
+}
+
+// تأثيرات للروابط
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+  
+  &:hover, &:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+}

@@ -1,0 +1,154 @@
+.myGigs {
+  background-color: #F9FAFB;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2C3E50;
+      }
+
+      .add-btn {
+        background: #1E90FF;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background: #1E90FF;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    .loading, .error {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #64748B;
+      margin-top: 50px;
+    }
+
+    .error {
+      color: #E63946;
+    }
+
+    .gigs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .gig-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      }
+
+      .gig-image {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .gig-content {
+        padding: 15px;
+
+        h3 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #2C3E50;
+          margin-bottom: 8px;
+        }
+
+        .price {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #00CEC9;
+          margin-bottom: 4px;
+        }
+
+        .sales {
+          font-size: 0.9rem;
+          color: #64748B;
+        }
+      }
+
+      .delete-btn {
+        background: #E63946;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 0 0 12px 12px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background: #E63946;
+        }
+      }
+    }
+
+    .no-gigs {
+      text-align: center;
+      margin-top: 60px;
+
+      img {
+        width: 180px;
+        margin-bottom: 20px;
+        opacity: 0.8;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #64748B;
+        margin-bottom: 20px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background: #FFB400;
+        color: #fff;
+        padding: 12px 28px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+          background:#FFB400;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}

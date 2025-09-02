@@ -1,0 +1,323 @@
+// 🎨 تطبيق متغيرات الألوان من اللوحة
+$primary-color: #1E90FF;
+$secondary-color-1: #00CEC9;
+$secondary-color-2: #FFB400;
+$main-bg: #F9FAFB;
+$card-bg: #FFFFFF;
+$dark-bg: #1E293B;
+$body-text: #2C3E50;
+$muted-text: #64748B;
+$text-on-primary: #FFFFFF;
+$warning-color: #E63946;
+$success-color: #10B981;
+
+.requests {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: $card-bg;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  .requests-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    h2 {
+      color: $body-text;
+      font-size: 1.5rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .requests-count {
+      margin-right: 0.75rem;
+      color: $muted-text;
+      font-size: 0.9rem;
+      background: rgba($primary-color, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+    }
+  }
+
+  // 🔴 رسالة خطأ من السيرفر
+  .server-error {
+    background: rgba($warning-color, 0.1);
+    border: 1px solid rgba($warning-color, 0.4);
+    color: $warning-color;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+      font-size: 1.2rem;
+      color: $warning-color;
+    }
+  }
+
+  .loading-state,
+  .error-state,
+  .no-requests {
+    text-align: center;
+    padding: 2rem;
+    color: $muted-text;
+
+    i {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+  }
+
+  .error-state i {
+    color: $warning-color;
+  }
+
+  .no-requests i {
+    color: rgba($muted-text, 0.3);
+  }
+
+  .requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .request-form-container {
+    background: $main-bg;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+
+    h3 {
+      color: $body-text;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .request-form {
+      .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          color: $body-text;
+          font-size: 0.95rem;
+        }
+
+        textarea,
+        input {
+          width: 100%;
+          padding: 1rem;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          font-family: inherit;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+
+          &:focus {
+            outline: none;
+            border-color: $primary-color;
+            box-shadow: 0 0 0 3px rgba($primary-color, 0.15);
+          }
+
+          &.error {
+            border-color: $warning-color;
+            box-shadow: 0 0 0 3px rgba($warning-color, 0.15);
+          }
+        }
+
+        textarea {
+          resize: vertical;
+          min-height: 120px;
+          line-height: 1.6;
+        }
+
+        .char-counter,
+        .budget-hint {
+          font-size: 0.85rem;
+          color: $muted-text;
+          margin-top: 0.5rem;
+        }
+
+        .char-counter {
+          text-align: left;
+        }
+      }
+
+      // 🔴 أخطاء التحقق من النموذج
+      .validation-errors {
+        background: rgba($warning-color, 0.08);
+        border: 1px solid rgba($warning-color, 0.4);
+        color: $body-text;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+
+        h4 {
+          margin: 0 0 0.5rem 0;
+          font-size: 1rem;
+          color: $warning-color;
+        }
+
+        ul {
+          margin: 0;
+          padding-left: 1.5rem;
+        }
+
+        li {
+          margin-bottom: 0.25rem;
+          font-size: 0.9rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          i {
+            font-size: 0.8rem;
+            color: $warning-color;
+          }
+        }
+      }
+
+      .submit-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 8px;
+        background: $primary-color;
+        color: $text-on-primary;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover:not(:disabled) {
+          background: $primary-color;
+          transform: translateY(-2px);
+        }
+
+        &:disabled {
+          background: $muted-text;
+          cursor: not-allowed;
+          transform: none;
+        }
+
+        .button-spinner {
+          width: 16px;
+          height: 16px;
+          border: 2px solid transparent;
+          border-radius: 50%;
+          border-top-color: currentColor;
+          animation: spin 1s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+// 🌍 دعم الاتجاه RTL
+[dir="rtl"] {
+  .requests {
+    text-align: right;
+    direction: rtl;
+
+    .requests-header {
+      .requests-count {
+        margin-right: 0;
+        margin-left: 0.75rem;
+      }
+    }
+
+    .char-counter {
+      text-align: right !important;
+    }
+
+    .validation-errors {
+      ul {
+        padding-left: 0;
+        padding-right: 1.5rem;
+      }
+    }
+  }
+}
+
+// 📱 استجابة للهواتف
+@media (max-width: 768px) {
+  .requests {
+    padding: 1.5rem;
+
+    .request-form-container {
+      padding: 1.5rem;
+    }
+  }
+}
+
+// 🔄 أنيميشن دوران
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background: #ccc;
+}
+
+.modal-actions button:last-child {
+  background: #007bff;
+  color: white;
+}

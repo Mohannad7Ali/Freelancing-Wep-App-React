@@ -1,0 +1,169 @@
+/* 🎨 Colors */
+$primary: #1E90FF;
+$secondary1: #00CEC9;
+$secondary2: #FFB400;
+$background: #F9FAFB;
+$card-bg: #FFFFFF;
+$dark-bg: #1E293B;
+$text-main: #2C3E50;
+$text-muted: #64748B;
+$white: #FFFFFF;
+
+.Projects {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: $background;
+  direction: rtl; // ✅ يجعل كل النصوص تبدأ من اليمين
+
+  .container {
+    width: 1400px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .breadcrumbs {
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-muted;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: $text-main;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      color: $text-muted;
+      margin-bottom: 20px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-main;
+
+        input {
+          padding: 8px 12px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          outline: none;
+          font-size: 15px;
+          font-weight: 500;
+          color: $text-main;
+          background: $card-bg;
+
+          &::placeholder {
+            color: $text-muted;
+          }
+        }
+        select {
+          padding: 8px 12px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          outline: none;
+          font-size: 15px;
+          font-weight: 500;
+          color: $text-main;
+          background: $card-bg;
+
+          &::placeholder {
+            color: $text-muted;
+          }
+        }
+
+        button {
+          padding: 8px 16px;
+          background-color: $primary;
+          color: $white;
+          border: none;
+          border-radius: 6px;
+          font-weight: 600;
+          font-size: 15px;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            background-color: #1E90FF;
+          }
+        }
+      }
+
+      .right {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-main;
+
+        .sortBy {
+          color: $text-muted;
+          font-weight: 500;
+        }
+
+        .sortType {
+          font-weight: 700;
+          color: $secondary1;
+        }
+
+        img {
+          width: 18px;
+          cursor: pointer;
+        }
+
+        .rightMenu {
+          padding: 15px;
+          background-color: $card-bg;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          position: absolute;
+          top: 35px;
+          left: 0; // ✅ لأننا RTL
+          z-index: 10;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          font-size: 15px;
+          color: $text-main;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+          span {
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: 600;
+
+            &:hover {
+              color: $secondary2;
+              transform: translateX(-6px);
+            }
+          }
+        }
+      }
+    }
+
+ .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); // ✅ كروت متساوية
+  gap: 20px;
+  margin-top: 20px;
+}
+  }
+}

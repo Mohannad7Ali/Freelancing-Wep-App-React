@@ -1,0 +1,147 @@
+/* 🎨 Colors System */
+$primary: #1E90FF;   // أزرق سماوي حديث (CTA, أزرار رئيسية, عناوين مهمة)
+$secondary1: #00CEC9; // تركواز (Tabs, أيقونات)
+$secondary2: #FFB400; // برتقالي ذهبي (Accent)
+$background: #F9FAFB; // خلفية عامة
+$card-bg: #FFFFFF;    // خلفيات أقسام
+$dark-bg: #1E293B;    // فوتر داكن
+$text-main: #2C3E50;  // نص أساسي
+$text-muted: #64748B; // نص ثانوي
+$white: #FFFFFF;
+
+/* Footer Styles */
+.footer {
+  background: $dark-bg;
+  color: $white;
+  font-size: 15px;
+  padding: 50px 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    /* TOP LINKS */
+    .top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding-bottom: 30px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-width: 180px;
+
+        h2 {
+          font-size: 20px;
+          font-weight: 700;
+          margin-bottom: 12px;
+          color: $primary;
+          position: relative;
+          padding-bottom: 8px;
+
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 45px;
+            height: 3px;
+            background: linear-gradient(90deg, $secondary1, $primary);
+          }
+        }
+
+        span {
+          font-size: 15px;
+          font-weight: 400;
+          cursor: pointer;
+          transition: all 0.2s;
+          color: $white;
+
+          &:hover {
+            color: $secondary2;
+            transform: translateX(-5px);
+          }
+        }
+      }
+    }
+
+    /* SEPARATOR */
+    .separator {
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      margin: 20px 0;
+      border: none;
+    }
+
+    /* BOTTOM */
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      padding-top: 25px;
+
+      .social {
+        display: flex;
+        gap: 20px;
+
+        img {
+          width: 26px;
+          height: 26px;
+          opacity: 0.85;
+          transition: all 0.3s;
+          cursor: pointer;
+          filter: grayscale(20%);
+
+          &:hover {
+            opacity: 1;
+            transform: translateY(-3px) scale(1.1);
+            filter: grayscale(0%);
+          }
+        }
+      }
+
+      .copyright {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+
+        span {
+          color: $secondary1;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .footer {
+    .container {
+      .top {
+        gap: 50px;
+
+        .item {
+          min-width: 200px;
+        }
+      }
+
+      .bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}

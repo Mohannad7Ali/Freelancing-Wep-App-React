@@ -1,0 +1,212 @@
+$primary: #1E90FF;
+$secondary: #00CEC9;
+$accent: #FFB400;
+$text-main: #2C3E50;
+$text-muted: #64748B;
+$background: #F9FAFB;
+$card-bg: #FFFFFF;
+
+.add {
+  display: flex;
+  justify-content: center;
+  background-color: $background;
+  min-height: 100vh;
+  padding: 30px 20px;
+  direction: rtl;
+  text-align: right;
+
+  .container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 30px;
+    background: $card-bg;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    h1 {
+      color: $text-main;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      border-bottom: 3px solid $primary;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    .sections {
+      display: flex;
+      gap: 40px;
+
+      @media (max-width: 1200px) {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .info,
+      .details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        label {
+          color: $text-main;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+          padding: 12px 15px;
+          border: 1px solid #e2e8f0;
+          border-radius: 6px;
+          font-size: 1rem;
+          width: 100%;
+          background-color: #f8fafc;
+          transition: all 0.2s;
+
+          &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.2);
+          }
+        }
+
+        .images {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
+          .imagesInputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+
+            @media (max-width: 768px) {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            background: $primary;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+              background: $primary;
+            }
+
+            &:disabled {
+              background: $text-muted;
+              cursor: not-allowed;
+            }
+          }
+        }
+
+        .add-features-container {
+          margin-top: 5px;
+
+          .add-features-form {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+
+            input {
+              flex: 1;
+              padding: 8px 12px;
+            }
+
+            button {
+              padding: 8px 12px;
+              background: $secondary;
+              color: white;
+              border: none;
+              border-radius: 6px;
+              cursor: pointer;
+
+              &:hover {
+                background: $secondary;
+              }
+            }
+          }
+
+          .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            .feature-item button {
+              padding: 6px 12px;
+              font-size: 0.9rem;
+              background: #f1f5f9;
+              border-radius: 6px;
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              border: none;
+              cursor: pointer;
+
+              span {
+                color: #e53e3e;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
+        > button {
+          margin-top: 15px;
+          padding: 14px 28px;
+          font-size: 1.1rem;
+          font-weight: 600;
+          background: $primary;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          align-self: flex-start;
+
+          &:hover {
+            background:$primary;
+          }
+        }
+      }
+
+      .info {
+        padding-left: 40px; // بدل right لأن RTL
+        border-left: 1px solid #e2e8f0;
+
+        @media (max-width: 1200px) {
+          padding-left: 0;
+          padding-bottom: 30px;
+          border-left: none;
+          border-bottom: 1px solid #e2e8f0;
+        }
+      }
+    }
+
+    .alert {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+
+  &.error {
+    background: #fff5f5;
+    color: #e53e3e;
+    border-right: 4px solid #e53e3e;
+  }
+
+  &.success {
+    background: #f0fff4;
+    color: #38a169;
+    border-right: 4px solid #38a169;
+  }
+}}
+}

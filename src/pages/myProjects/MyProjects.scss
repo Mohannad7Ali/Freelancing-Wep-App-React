@@ -1,0 +1,317 @@
+$primary: #1E90FF;
+$secondary: #00CEC9;
+$accent: #FFB400;
+$text-main: #2C3E50;
+$text-muted: #64748B;
+$background: #F9FAFB;
+$card-bg: #FFFFFF;
+$success: #38A169;
+$danger: #E63946;
+
+.myProjects {
+  background-color: $background;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $text-main;
+      }
+
+      .add-btn {
+        background: $primary;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        &:hover {
+          background: $primary;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+      }
+    }
+
+    .loading, .error {
+      text-align: center;
+      font-size: 1.1rem;
+      color: $text-muted;
+      margin-top: 50px;
+      padding: 20px;
+    }
+
+    .error {
+      color: $danger;
+      background: $danger;
+      border-radius: 8px;
+      border: 1px solid $danger;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: $card-bg;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+      border: 1px solid #e2e8f0;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      }
+
+      .card-header {
+        padding: 15px 20px;
+        background: $primary;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e2e8f0;
+
+        .project-title {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: $text-main;
+          margin: 0;
+          flex: 1;
+          margin-left: 10px;
+        }
+
+        .status-badge {
+          padding: 4px 10px;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
+
+          &.open {
+            background: $success;
+            color: $success;
+          }
+
+          &.closed {
+            background: $danger;
+            color: $danger;
+          }
+        }
+      }
+
+      .project-content {
+        padding: 20px;
+        flex: 1;
+
+        .project-desc {
+          color: $text-muted;
+          line-height: 1.6;
+          margin-bottom: 15px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .project-details {
+          margin-bottom: 15px;
+
+          .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 5px 0;
+            border-bottom: 1px dashed #e2e8f0;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            .label {
+              font-weight: 600;
+              color: $text-main;
+            }
+
+            .value {
+              color: $text-muted;
+            }
+          }
+        }
+
+        .project-features {
+          h4 {
+            font-size: 0.9rem;
+            color: $text-main;
+            margin-bottom: 8px;
+          }
+
+          .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+
+            .feature-tag {
+              background: white;
+              color: $secondary;
+              padding: 4px 8px;
+              border-radius: 4px;
+              font-size: 0.8rem;
+            }
+
+            .more-features {
+              background: #e2e8f0;
+              color: $text-muted;
+              padding: 4px 8px;
+              border-radius: 4px;
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+
+      .card-actions {
+        display: flex;
+        padding: 15px 20px;
+        border-top: 1px solid #e2e8f0;
+        gap: 10px;
+
+        .view-btn {
+          flex: 1;
+          background: $secondary;
+          color: white;
+          text-align: center;
+          padding: 8px 15px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-size: 0.9rem;
+          font-weight: 500;
+          transition: 0.2s;
+
+          &:hover {
+            background: $secondary;
+          }
+        }
+
+        .delete-btn {
+          background:
+          $danger;
+          color: #fff;
+          border: none;
+          padding: 8px 15px;
+          border-radius: 6px;
+          font-size: 0.9rem;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            background: $danger;
+          }
+        }
+      }
+    }
+
+    .no-projects {
+      text-align: center;
+      margin-top: 60px;
+      padding: 40px 20px;
+      background: $card-bg;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+      img {
+        width: 180px;
+        margin-bottom: 20px;
+        opacity: 0.8;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: $text-muted;
+        margin-bottom: 25px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background: $accent;
+        color: #fff;
+        padding: 12px 28px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        &:hover {
+          background:$accent;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+      }
+    }
+  }
+}
+
+// تصميم متجاوب
+@media (max-width: 768px) {
+  .myProjects {
+    padding: 20px 15px;
+    
+    .container {
+      .title {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        
+        .add-btn {
+          align-self: stretch;
+        }
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-card {
+        .card-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          
+          .project-title {
+            margin-left: 0;
+          }
+        }
+        
+        .card-actions {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

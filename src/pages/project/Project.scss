@@ -1,0 +1,457 @@
+// تطبيق متغيرات الألوان من اللوحة المقدمة
+$primary-color: #1E90FF;
+$secondary-color-1: #00CEC9;
+$secondary-color-2: #FFB400;
+$main-bg: #F9FAFB;
+$card-bg: #FFFFFF;
+$dark-bg: #1E293B;
+$body-text: #2C3E50;
+$muted-text: #64748B;
+$text-on-primary: #FFFFFF;
+$warning-color: #E63946;
+
+.project-page {
+  display: flex;
+  justify-content: center;
+  background-color: $main-bg;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  .loading, .error {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: $muted-text;
+    
+    &.loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      
+      &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 2px solid $primary-color;
+        border-top: 2px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px 15px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+    }
+
+    .left {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      .breadcrumbs {
+        font-weight: 300;
+        font-size: 14px;
+        color: $muted-text;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        color: $body-text;
+        font-size: 28px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px;
+        background: $card-bg;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+        .pp {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid $primary-color;
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: 600;
+          color: $body-text;
+        }
+      }
+
+      .project-section {
+        background: $card-bg;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+        h2 {
+          color: $body-text;
+          font-size: 20px;
+          margin-bottom: 20px;
+          padding-bottom: 12px;
+          border-bottom: 2px solid $secondary-color-1;
+          font-weight: 600;
+        }
+
+        p {
+          line-height: 1.7;
+          color: $muted-text;
+          font-size: 16px;
+          margin-bottom: 0;
+        }
+      }
+
+      .features-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 15px;
+
+        .feature-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+          padding: 12px;
+          background: $main-bg, ;
+          border-radius: 8px;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: $primary-color;
+            transform: translateX(5px);
+          }
+
+          .feature-check {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            background: $secondary-color-1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            i {
+              color: $text-on-primary;
+              font-size: 12px;
+            }
+          }
+
+          .feature-text {
+            color: $body-text;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .investor-card {
+        background:$main-bg;
+        border-radius: 12px;
+        overflow: hidden;
+
+        .investor-header {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          padding: 20px;
+          background: $card-bg;
+
+          .investor-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid $primary-color;
+          }
+
+          .investor-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .investor-name {
+              font-weight: 700;
+              color: $body-text;
+              font-size: 18px;
+            }
+
+            .investor-country {
+              color: $muted-text;
+              font-size: 14px;
+            }
+          }
+        }
+
+        .investor-details {
+          padding: 20px;
+
+          .detail-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+
+            .detail-label {
+              color: $muted-text;
+              font-size: 14px;
+            }
+
+            .detail-value {
+              color: $body-text;
+              font-weight: 600;
+              font-size: 14px;
+            }
+          }
+
+          .divider {
+            height: 1px;
+            background: rgba(0, 0, 0, 0.1);
+            margin: 15px 0;
+          }
+
+          .investor-bio {
+            color: $muted-text;
+            line-height: 1.6;
+            font-size: 15px;
+            margin: 0;
+            padding: 15px;
+            background: $card-bg;
+            border-radius: 8px;
+            border-left: 4px solid $primary-color;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      .project-card {
+        background: $card-bg;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 100px;
+
+        .price-section {
+          margin-bottom: 20px;
+          text-align: center;
+
+          h3 {
+            color: $body-text;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+          }
+
+          .price {
+            color: $secondary-color-2;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+          }
+        }
+
+        .short-desc {
+          color: $muted-text;
+          line-height: 1.6;
+          text-align: center;
+          margin-bottom: 25px;
+          font-size: 15px;
+          padding: 0 10px;
+        }
+
+        .project-details {
+          margin-bottom: 25px;
+          padding: 20px;
+          background: $main-bg;
+          border-radius: 8px;
+
+          .detail-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+
+            i {
+              color: $primary-color;
+              font-size: 18px;
+              width: 20px;
+            }
+
+            span {
+              color: $body-text;
+              font-weight: 500;
+              font-size: 15px;
+            }
+          }
+        }
+
+        .action-buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          .btn-primary, .btn-secondary {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            i {
+              font-size: 16px;
+            }
+          }
+
+          .btn-primary {
+            background: $primary-color;
+            color: $text-on-primary;
+
+            &:hover {
+              background: $primary-color;
+              transform: translateY(-2px);
+            }
+          }
+
+          .btn-secondary {
+            background: transparent;
+            color: $primary-color;
+            border: 2px solid $primary-color;
+
+            &:hover {
+              background: $primary-color;
+              color: $text-on-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// تنسيقات للعربية واتجاه RTL
+[dir="rtl"] {
+  .project-page {
+    text-align: right;
+    direction: rtl;
+
+    .container {
+      .left {
+        .user {
+          flex-direction: row-reverse;
+        }
+
+        .feature-item {
+          &:hover {
+            transform: translateX(-5px);
+          }
+        }
+
+        .investor-card {
+          .investor-details {
+            .investor-bio {
+              border-left: none;
+              border-right: 4px solid $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// تنسيقات للهواتف
+@media (max-width: 768px) {
+  .project-page {
+    padding: 10px;
+
+    .container {
+      padding: 15px 10px;
+      gap: 20px;
+
+      .left {
+        .project-section {
+          padding: 20px;
+        }
+
+        .features-list {
+          .feature-item {
+            padding: 10px;
+          }
+        }
+
+        .investor-card {
+          .investor-header {
+            padding: 15px;
+          }
+
+          .investor-details {
+            padding: 15px;
+          }
+        }
+      }
+
+      .right {
+        .project-card {
+          padding: 20px;
+          position: relative;
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+// أنيميشن الدوران
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// تأثيرات الانتقال
+.feature-item, .btn-primary, .btn-secondary {
+  transition: all 0.3s ease;
+}
+
+// تحسينات للظلال
+.project-section, .investor-card, .project-card {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+  
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+  }
+}

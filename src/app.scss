@@ -1,0 +1,17 @@
+* {
+
+  font-family: 'Tajawal', sans-serif; // Arabic-friendly font
+  .link {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Takes full viewport height
+
+  .main-content {
+    flex: 1; // Takes all available space
+  }
+}
