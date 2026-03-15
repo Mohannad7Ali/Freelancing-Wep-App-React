@@ -1,10 +1,11 @@
-# Freelancing Web App (React)
+# Freelancing Web App
 
 > A secure and professional platform connecting project owners and freelancers in the Arab world, designed to streamline hiring, collaboration, and remote project management.
 
 ## 📖 Project Overview
 
 This project aims to provide an integrated platform that allows project owners to clearly present their ideas and requirements, while enabling freelancers to showcase their skills and apply for suitable projects. The system follows a seamless and interconnected structure—from registration, searching, and applying, to contracting and payment management—ensuring a hassle-free user experience.
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
@@ -26,6 +27,7 @@ This project aims to provide an integrated platform that allows project owners t
   <img src="https://github.com/Mohannad7Ali/Freelancing-Wep-App-React/raw/main/assets/screenshots/Picture7.png" alt="Picture7" width="48%">
   <img src="https://github.com/Mohannad7Ali/Freelancing-Wep-App-React/raw/main/assets/screenshots/Picture8.png" alt="Picture8" width="48%">
 </p>
+
 ## 🚀 Technologies Used
 
 ### ⚙️ Back-End
